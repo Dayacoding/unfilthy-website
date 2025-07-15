@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J2ZR6DSB0D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2ZR6DSB0D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J2ZR6DSB0D');
+  </script>
 
-  gtag('config', 'G-J2ZR6DSB0D');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unfilthy | Stupidly Good Cleaning</title>
+  <title>Book Now | Unfilthy</title>
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    .logo {
-      color: #FD841F;
-    }
-  </style>
 </head>
-
 <body>
+
   <nav class="navbar">
     <div class="logo" id="logo">Unfilthy</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#about">About</a></li>
       <li><a href="book.html">Book</a></li>
     </ul>
   </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">STUPIDLY GOOD CLEANING.</h1>
-      <a href="book.html" class="cta-btn">GET UNFILTHY</a>
+  <section class="booking-section">
+    <h1 class="booking-header">Book a Clean</h1>
+    <p class="booking-tagline">Choose a time, give us your details — we'll handle the rest.</p>
+
+    <div class="booking-box">
+      <form class="booking-form" action="https://formspree.io/f/xldlebbb" method="POST">
+        <!-- Hidden inputs -->
+        <input type="hidden" name="_subject" value="New Booking Request from Unfilthy!" />
+        <input type="hidden" name="_format" value="table" />
+        <input type="hidden" name="_redirect" value="success.html" />
+
+  
+        <!-- Form fields -->
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="Phone Number" required />
+
+        <select name="service" required>
+          <option value="">Select a Service</option>
+          <option value="deep-reset">Deep Reset</option>
+          <option value="luxe-maintenance">Luxe Maintenance</option>
+          <option value="move">Move-In / Move-Out</option>
+        </select>
+
+        <textarea name="message" placeholder="Any notes or requests?" rows="4"></textarea>
+        <button type="submit" class="cta-btn">Submit</button>
+        
+        <!-- Honeypot anti-spam -->
+        <input type="text" name="bot-field" style="display: none;" tabindex="-1" autocomplete="off" />
+      </form>
     </div>
   </section>
 
   <script src="script.js"></script>
 </body>
-
 </html>
